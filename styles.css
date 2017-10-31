@@ -7,4 +7,38 @@
   left: -1000px;
   position: absolute;
   top: -1000px;
+  /*background-color: black;*/
 }
+
+  .rect:hover * {
+    opacity: 1;
+  }
+
+  .tagBox {
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    bottom: -12px;
+    opacity: 0;
+  }
+
+  input {
+    border: 0px;
+    bottom: -42px;
+    color: #a64ceb;
+    font-size: 15px;
+    height: 30px;
+    left: 50%;
+    margin-left: -90px;
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    text-align: center;
+    width: 180px;
+    transition: opacity .35s ease-out;
+  }
