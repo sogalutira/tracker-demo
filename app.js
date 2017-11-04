@@ -1,6 +1,7 @@
 var myTracker = new tracking.Tracker('target');
 
 var img = document.getElementById('test-image');
+var friends = ['Friend 1'];
 
 var tracker = new tracking.ObjectTracker(['face', 'eye', 'mouth']);
 tracker.setStepSize(1.7);
@@ -15,8 +16,26 @@ tracker.on('track', function(event) {
 
 window.plot = function(x, y, w, h) {
   var rect = document.createElement('div');
-  document.querySelector('.container').appendChild(rect);
+  var tagBox = document.createElement('div');
+  var input = document.createElement('input');
+
+  input.value = friends.pop();
+  if (input.value === 'undefined'){
+    input.value = 'tag a friend';
+    rect.style.backgroundColor = 'black';
+  }
+
+  rect.onclick = function name() {
+    input.select();
+  };
+
+  tagBox.classList.add('tagBox');
   rect.classList.add('rect');
+
+  rect.appendChild(input);
+  rect.appendChild(tagBox);
+  document.querySelector('.container').appendChild(rect);
+  
   rect.style.width = w + 'px';
   rect.style.height = h + 'px';
   rect.style.left = (img.offsetLeft + x) + 'px';
